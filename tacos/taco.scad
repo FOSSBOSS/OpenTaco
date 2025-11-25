@@ -1,4 +1,5 @@
 // Open Taco, parametric taco modeling.
+$fn = 200;
 steps = 200;
 xmin  = 0.01;
 xmax  = 5;
@@ -32,8 +33,13 @@ difference() {
 }
 }
 //side();
+// cross lateral curve pls let it be pi
+intersection(){
+translate([depth/3.14,scale-2.15,depth-depth/2])rotate([90,0,0])cylinder(depth+3.14,depth/2,depth/2);
 
 union(){
 side();
 translate([0,-35,depth])rotate([180,0,0]) side();
+}
+
 }
